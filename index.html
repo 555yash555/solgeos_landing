@@ -141,21 +141,7 @@
     <!-- Full-screen Flash Overlay -->
     <div id="screen-flash" class="fixed inset-0 bg-white opacity-0 pointer-events-none z-[100]"></div>
 
-    <!-- Pre-Launch Banner (Hidden initially, shows after hero scroll) -->
-    <div id="pre-launch-banner" class="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary to-violet py-2.5 px-4 text-center shadow-lg opacity-0 -translate-y-full transition-all duration-300 pointer-events-none">
-        <p class="text-white text-sm font-semibold">
-            <span class="inline-flex items-center justify-center gap-2 flex-wrap">
-                <span class="inline-flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-                    <span class="hidden sm:inline">COMING SOON • PRE-LAUNCH PHASE</span>
-                    <span class="sm:hidden">PRE-LAUNCH</span>
-                </span>
-                <span class="hidden md:inline text-white/90">|</span>
-                <span class="hidden md:inline text-white/90">Looking for Founding Partners & Early Travelers</span>
-                <a href="#founding-partners" class="ml-1 underline hover:no-underline font-bold pointer-events-auto">Learn More →</a>
-            </span>
-        </p>
-    </div>
+
 
     <!-- Nav -->
     <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center mix-blend-difference text-white">
@@ -188,13 +174,11 @@
                 SOLO BUT<br>
                 <span class="text-primary">NOT ALONE.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-textSecondary max-w-2xl mx-auto mb-4 font-medium">
+            <p class="text-xl md:text-2xl text-textSecondary max-w-2xl mx-auto mb-10 font-medium">
                 The first social marketplace for verified group trips.<br>
                 <span class="text-gray-400">Connect, chat, and travel with your tribe.</span>
             </p>
-            <p class="text-sm md:text-base text-yellow-400/90 max-w-xl mx-auto mb-10 font-semibold">
-                🎯 We're building something special. Join as a founding partner or early traveler!
-            </p>
+
             
             <div class="flex items-center justify-center gap-4 mb-20">
                  <div class="flex -space-x-3">
@@ -376,149 +360,7 @@
         </div>
     </section>
 
-    <!-- Founding Partners Section -->
-    <section class="py-32 px-6 relative z-30 bg-gradient-to-b from-deep via-surface to-deep" id="founding-partners">
-        <div class="max-w-6xl mx-auto">
-            
-            <!-- Header -->
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 text-xs font-bold uppercase tracking-widest mb-6">
-                    <span class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span> Limited Spots Available
-                </div>
-                <h2 class="text-4xl md:text-6xl font-black tracking-tight mb-6">
-                    Become a <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Founding Partner</span>
-                </h2>
-                <p class="text-xl text-textSecondary max-w-2xl mx-auto">
-                    We're looking for early agencies and travelers to shape the future of group travel. Get exclusive lifetime benefits.
-                </p>
-            </div>
 
-            <!-- Benefits Grid -->
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                
-                <!-- For Agencies -->
-                <div class="glass rounded-3xl p-8 md:p-10 relative overflow-hidden border border-violet/20 hover:border-violet/40 transition-all duration-300 group">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-violet/10 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 rounded-2xl bg-violet/20 flex items-center justify-center mb-6 border border-violet/30">
-                            <i data-lucide="building-2" class="w-7 h-7 text-violet"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">For Travel Agencies</h3>
-                        <p class="text-textSecondary mb-6">First 50 agencies get founding partner status</p>
-                        
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm"><strong class="text-white">Lifetime 0% Commission</strong> - Keep 100% of your earnings forever</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm"><strong class="text-white">Priority Listing</strong> - Featured placement in search results</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm"><strong class="text-white">Founding Partner Badge</strong> - Stand out as an early adopter</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm"><strong class="text-white">Shape the Platform</strong> - Direct input on features & roadmap</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm"><strong class="text-white">Early Access</strong> - Launch your trips before public release</span>
-                            </li>
-                        </ul>
-                        
-                        <a href="partner.html" class="inline-flex items-center justify-center gap-2 w-full bg-gradient-to-r from-violet to-primary px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform shadow-neon">
-                            Apply as Founding Partner
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </a>
-                        
-                        <p class="text-xs text-center text-yellow-400/80 mt-4 font-semibold">
-                            ⚡ Only 23 spots left
-                        </p>
-                    </div>
-                </div>
-
-                <!-- For Travelers -->
-                <div class="glass rounded-3xl p-8 md:p-10 relative overflow-hidden border border-primary/20 hover:border-primary/40 transition-all duration-300 group">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 border border-primary/30">
-                            <i data-lucide="users" class="w-7 h-7 text-primary"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">For Early Travelers</h3>
-                        <p class="text-textSecondary mb-6">First 2,000 travelers get exclusive perks</p>
-                        
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm"><strong class="text-white">Early Bird Discounts</strong> - 20% off your first 3 trips</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm"><strong class="text-white">Founding Traveler Badge</strong> - Exclusive profile badge</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm"><strong class="text-white">Priority Support</strong> - Dedicated customer service</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm"><strong class="text-white">Beta Access</strong> - Try new features first</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm"><strong class="text-white">Community Input</strong> - Help us build what you want</span>
-                            </li>
-                        </ul>
-                        
-                        <button onclick="openWaitlistModal()" class="inline-flex items-center justify-center gap-2 w-full bg-gradient-to-r from-primary to-violet px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform shadow-neon">
-                            Join as Early Traveler
-                            <i data-lucide="sparkles" class="w-4 h-4"></i>
-                        </button>
-                        
-                        <p class="text-xs text-center text-yellow-400/80 mt-4 font-semibold">
-                            ⚡ 1,347 spots remaining
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Timeline -->
-            <div class="glass rounded-3xl p-8 md:p-10 relative overflow-hidden border border-white/10">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 blur-[100px] rounded-full"></div>
-                <div class="relative z-10">
-                    <h3 class="text-2xl font-bold mb-8 text-center">Launch Timeline</h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="text-center">
-                            <div class="w-12 h-12 rounded-full bg-green-500/20 border-2 border-green-500 flex items-center justify-center mx-auto mb-4">
-                                <i data-lucide="check" class="w-6 h-6 text-green-500"></i>
-                            </div>
-                            <p class="font-bold mb-1">Now - Feb 2026</p>
-                            <p class="text-sm text-textSecondary">Founding Partner Recruitment</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="w-12 h-12 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center mx-auto mb-4 animate-pulse">
-                                <i data-lucide="rocket" class="w-6 h-6 text-primary"></i>
-                            </div>
-                            <p class="font-bold mb-1">March 2026</p>
-                            <p class="text-sm text-textSecondary">Beta Launch with Partners</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="w-12 h-12 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center mx-auto mb-4">
-                                <i data-lucide="globe" class="w-6 h-6 text-white/50"></i>
-                            </div>
-                            <p class="font-bold mb-1">April 2026</p>
-                            <p class="text-sm text-textSecondary">Public Launch</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
 
     <!-- Waitlist Modal -->
     <div id="waitlist-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[200] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
@@ -646,29 +488,6 @@
             requestAnimationFrame(raf); 
         }
         requestAnimationFrame(raf);
-
-        // Show/Hide Pre-Launch Banner on Scroll
-        const preLaunchBanner = document.getElementById('pre-launch-banner');
-        let lastScroll = 0;
-        
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            const heroHeight = window.innerHeight; // Hero is full screen
-            
-            if (currentScroll > heroHeight * 0.8) {
-                // Show banner after scrolling 80% of hero
-                preLaunchBanner.classList.remove('opacity-0', '-translate-y-full');
-                preLaunchBanner.classList.add('opacity-100', 'translate-y-0');
-                preLaunchBanner.classList.remove('pointer-events-none');
-            } else {
-                // Hide banner when at top
-                preLaunchBanner.classList.add('opacity-0', '-translate-y-full');
-                preLaunchBanner.classList.remove('opacity-100', 'translate-y-0');
-                preLaunchBanner.classList.add('pointer-events-none');
-            }
-            
-            lastScroll = currentScroll;
-        });
 
         // --- SCROLL SYNC LOGIC ---
 
