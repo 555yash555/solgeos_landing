@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SoleGoes Partner Program | Grow Your Travel Business</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deep: '#050505',
+                        surface: '#121212',
+                        primary: '#6366F1',
+                        violet: '#8B5CF6',
+                        textPrimary: '#FAFAFA',
+                        textSecondary: '#A1A1AA',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'primary-gradient': 'linear-gradient(135deg, #6366F1, #8B5CF6)',
+                        'glow-radial': 'radial-gradient(circle closest-side, rgba(99,102,241,0.15), transparent)',
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(99,102,241,0.4)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- GSAP & Lenis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <style>
+        body { background-color: #050505; color: #FAFAFA; overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .glass-strong { background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        
+        .form-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            color: white;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        .form-input:focus {
+            border-color: #6366F1;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center mix-blend-difference text-white">
+        <div class="glass px-6 py-3 rounded-full flex items-center gap-8 shadow-glass bg-black/50 backdrop-blur-md border border-white/10">
+            <a href="index.html" class="font-bold text-lg tracking-tight flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <div class="w-2 h-2 rounded-full bg-primary shadow-neon"></div> SoleGoes
+            </a>
+            <div class="hidden md:flex items-center gap-2 text-sm font-medium text-gray-300">
+                <a href="index.html#features" class="px-4 py-2 hover:bg-white/5 rounded-full transition-colors">Features</a>
+                <span class="bg-white/10 text-white px-4 py-2 rounded-full cursor-default">For Agencies</span>
+            </div>
+            <a href="#apply" class="bg-white text-black px-4 py-1.5 rounded-full text-sm font-bold hover:bg-gray-200 transition-colors">Apply Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
+        
+        <!-- Ambient Background -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] opacity-40 animate-pulse"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-violet/20 rounded-full blur-[100px] opacity-40"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                
+                <!-- Left: Text -->
+                <div class="lg:w-1/2 max-w-4xl">
+                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold uppercase tracking-widest mb-8">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Partner Program Open
+                    </div>
+                    <h1 class="text-5xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9]">
+                        THE OS FOR <br>
+                        <span class="text-primary">MODERN TRAVEL.</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-textSecondary max-w-2xl leading-relaxed mb-12">
+                        Ditch the spreadsheets. Get a unified dashboard for bookings, payments, and AI-powered growth. 
+                        <span class="text-white">Connecting you directly to Gen Z travelers.</span>
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#apply" class="px-8 py-4 rounded-full bg-white text-black font-bold text-lg hover:scale-105 transition-transform text-center">Become a Partner</a>
+                        <div class="px-8 py-4 rounded-full border border-white/10 text-white font-medium flex items-center justify-center gap-2 bg-white/5 backdrop-blur-sm">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i> Commission-free for first 50
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Book Style Mockup -->
+                <div class="lg:w-1/2 relative h-[600px] w-full flex items-center justify-center perspective-[2000px] group">
+                    
+                    <!-- Back Layer (Payment) -->
+                    <div class="absolute w-[300px] h-[600px] bg-black rounded-[40px] border-[8px] border-[#222] shadow-2xl overflow-hidden transform transition-all duration-500 ease-out cursor-pointer
+                                -rotate-y-[25deg] rotate-x-[10deg] -translate-x-24 translate-z-[-100px] opacity-70 scale-90
+                                hover:z-50 hover:opacity-100 hover:scale-110 hover:translate-x-0 hover:translate-z-[200px] hover:rotate-y-0 hover:rotate-x-0 hover:shadow-neon">
+                         <img src="assets/screenshots/payment_success.jpg" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity">
+                         <div class="absolute inset-0 bg-black/40 hover:bg-transparent transition-colors"></div>
+                    </div>
+
+                    <!-- Middle Layer (Trip Detail) -->
+                    <div class="absolute w-[300px] h-[600px] bg-black rounded-[40px] border-[8px] border-[#222] shadow-2xl overflow-hidden transform transition-all duration-500 ease-out cursor-pointer
+                                -rotate-y-[25deg] rotate-x-[10deg] -translate-x-12 translate-z-[-50px] opacity-85 scale-95
+                                hover:z-50 hover:opacity-100 hover:scale-110 hover:translate-x-0 hover:translate-z-[200px] hover:rotate-y-0 hover:rotate-x-0 hover:shadow-neon">
+                        <img src="assets/screenshots/trip_detail_ladakh.jpg" class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 bg-black/20 hover:bg-transparent transition-colors"></div>
+                    </div>
+
+                    <!-- Front Layer (Explore) -->
+                    <div class="absolute w-[300px] h-[600px] bg-black rounded-[40px] border-[8px] border-[#222] shadow-neon overflow-hidden transform transition-all duration-500 ease-out cursor-pointer
+                                -rotate-y-[25deg] rotate-x-[10deg] translate-x-4 translate-z-[0px]
+                                hover:z-50 hover:scale-110 hover:translate-x-0 hover:translate-z-[200px] hover:rotate-y-0 hover:rotate-x-0">
+                        <img src="assets/screenshots/explore_screen.jpg" class="w-full h-full object-cover">
+                        <!-- Gloss -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- HORIZONTAL SCROLL FEATURE SECTION (Desktop) / STACK (Mobile) -->
+    <section id="features-pin" class="relative bg-deep overflow-hidden">
+        
+        <div class="container mx-auto px-6 pb-12 pt-12">
+            <h2 class="text-3xl md:text-5xl font-bold mb-12 md:mb-24 text-center md:text-left">Powering Your Growth</h2>
+        </div>
+
+        <!-- The Track -->
+        <div class="features-track flex flex-col md:flex-row gap-8 md:gap-12 px-6 md:px-0 md:pl-[10vw] pb-24 h-auto md:h-screen items-center md:w-[400vw]">
+            
+            <!-- Card 1: Command Center -->
+            <div class="feature-card w-full md:w-[80vw] lg:w-[60vw] h-auto min-h-[50vh] md:h-[70vh] glass rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 flex flex-col justify-center relative overflow-hidden group shrink-0">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 blur-[80px] rounded-full"></div>
+                <div class="relative z-10">
+                    <div class="w-20 h-20 rounded-3xl bg-indigo-500/20 flex items-center justify-center mb-8 border border-indigo-500/30">
+                        <i data-lucide="layout-dashboard" class="w-10 h-10 text-indigo-400"></i>
+                    </div>
+                    <h3 class="text-4xl md:text-6xl font-bold mb-6">Unified Command Center</h3>
+                    <p class="text-xl text-textSecondary leading-relaxed max-w-2xl">
+                        Manage all your trips, bookings, and revenue in one sleek interface. Replace your fragmented spreadsheets with a powerful dashboard designed for speed and clarity.
+                    </p>
+                    <ul class="mt-8 space-y-3 text-lg text-gray-300">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Live Booking Tracking</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Revenue Analytics</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Customer CRM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2: Effortless Listings -->
+            <div class="feature-card w-full md:w-[80vw] lg:w-[60vw] h-auto min-h-[50vh] md:h-[70vh] glass rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 flex flex-col justify-center relative overflow-hidden group shrink-0">
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-violet-500/10 blur-[80px] rounded-full"></div>
+                <div class="relative z-10">
+                    <div class="w-20 h-20 rounded-3xl bg-violet-500/20 flex items-center justify-center mb-8 border border-violet-500/30">
+                        <i data-lucide="sparkles" class="w-10 h-10 text-violet-400"></i>
+                    </div>
+                    <h3 class="text-4xl md:text-6xl font-bold mb-6">AI-Powered Listings <span class="text-sm align-middle bg-white/10 px-3 py-1 rounded-full ml-2 border border-white/20">Coming Soon</span></h3>
+                    <p class="text-xl text-textSecondary leading-relaxed max-w-2xl">
+                        Adding trips basically writes itself. Input raw details and let our AI craft compelling itineraries, select optimal boarding points, and structure packages (AC/Non-AC) automatically.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: Smart Growth -->
+            <div class="feature-card w-full md:w-[80vw] lg:w-[60vw] h-auto min-h-[50vh] md:h-[70vh] glass rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 flex flex-col justify-center relative overflow-hidden group shrink-0">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-pink-500/10 blur-[100px] rounded-full"></div>
+                <div class="relative z-10">
+                    <div class="w-20 h-20 rounded-3xl bg-pink-500/20 flex items-center justify-center mb-8 border border-pink-500/30">
+                        <i data-lucide="trending-up" class="w-10 h-10 text-pink-400"></i>
+                    </div>
+                    <h3 class="text-4xl md:text-6xl font-bold mb-6">Smart Growth Engine</h3>
+                    <p class="text-xl text-textSecondary leading-relaxed max-w-2xl mb-8">
+                        Don't just sell trips; build a community. Access deep customer insights and "Demand On-Tap" to see where travelers want to go next before you even plan it.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl">
+                        <div class="bg-black/30 p-6 rounded-2xl border border-white/5">
+                            <div class="text-sm text-gray-400 mb-1">Interest Profiling</div>
+                            <div class="text-lg font-bold text-white">Target by Vibe</div>
+                        </div>
+                        <div class="bg-black/30 p-6 rounded-2xl border border-white/5">
+                            <div class="text-sm text-gray-400 mb-1">Trip Requests</div>
+                            <div class="text-lg font-bold text-white">Fill Seats Fast</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Card 4: Automated Finance -->
+             <div class="feature-card w-full md:w-[80vw] lg:w-[60vw] h-auto min-h-[50vh] md:h-[70vh] glass rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 flex flex-col justify-center relative overflow-hidden group shrink-0">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-green-500/10 blur-[80px] rounded-full"></div>
+                <div class="relative z-10">
+                    <div class="w-20 h-20 rounded-3xl bg-green-500/20 flex items-center justify-center mb-8 border border-green-500/30">
+                        <i data-lucide="wallet" class="w-10 h-10 text-green-400"></i>
+                    </div>
+                    <h3 class="text-4xl md:text-6xl font-bold mb-6">Automated Settlements</h3>
+                    <p class="text-xl text-textSecondary leading-relaxed max-w-2xl">
+                        Zero operational headaches. We handle the payment gateway, split the fees, and settle your payouts within 24 hours of trip completion.
+                    </p>
+                    <div class="mt-8 inline-block bg-black/40 px-8 py-4 rounded-2xl border border-white/10 backdrop-blur-md">
+                        <span class="block text-sm text-gray-400">Average Payout Time</span>
+                        <span class="text-3xl font-mono font-bold text-green-400">T + 24 Hours</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section class="py-24 relative" id="apply">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto glass-strong rounded-[3rem] p-8 md:p-16 relative overflow-hidden shadow-2xl border border-white/10">
+                
+                <!-- Background Decoration -->
+                <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-600/20 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+
+                <div class="flex flex-col lg:flex-row gap-16">
+                    
+                    <!-- Left: Copy -->
+                    <div class="lg:w-1/2 pt-10">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to scale?</h2>
+                        <p class="text-lg text-textSecondary mb-10 leading-relaxed">
+                            Join SoleGoes as a founding partner. We act as your technology backbone while you focus on curating amazing experiences.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center"><i data-lucide="trophy" class="w-5 h-5 text-yellow-400"></i></div>
+                                <div>
+                                    <div class="font-bold text-white">Trending Boost</div>
+                                    <div class="text-sm text-textSecondary">Top performing agencies get featured</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center"><i data-lucide="infinity" class="w-5 h-5 text-purple-400"></i></div>
+                                <div>
+                                    <div class="font-bold text-white">Unlimited Assets</div>
+                                    <div class="text-sm text-textSecondary">Upload unlimited 4K videos & photos</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center"><i data-lucide="shield-check" class="w-5 h-5 text-green-400"></i></div>
+                                <div>
+                                    <div class="font-bold text-white">Verified Trust</div>
+                                    <div class="text-sm text-textSecondary">Play Store & App Store listed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form -->
+                    <div class="lg:w-1/2 bg-black/40 p-8 rounded-3xl border border-white/5 backdrop-blur-xl">
+                        <form id="waitlistForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                            <!-- Web3Forms Config -->
+                            <input type="hidden" name="access_key" value="aecf6c2a-c5dc-4daa-b9cc-b8de2830fa9f">
+                            <input type="hidden" name="subject" value="New SoleGoes Launch Partner Application">
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-textSecondary uppercase tracking-wider mb-2 ml-1">Agency Details</label>
+                                    <input type="text" name="agency_name" class="form-input" placeholder="Agency Name" required>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input type="text" name="name" class="form-input" placeholder="Contact Person" required>
+                                    <input type="tel" name="phone" class="form-input" placeholder="Phone Number" required>
+                                </div>
+                                <input type="email" name="email" class="form-input" placeholder="Official Email Address" required>
+                                <input type="text" name="instagram" class="form-input" placeholder="Instagram Handle (e.g. @solegoes)" required>
+                            </div>
+
+                            <button type="submit" class="w-full bg-primary hover:bg-violet-600 text-white font-bold py-4 rounded-xl mt-6 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-neon flex items-center justify-center gap-2">
+                                Apply for Launch Partnership <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                            
+                            <p class="text-center text-xs text-textSecondary mt-4">
+                                🚀 First 50 agencies get lifetime commission-free listings
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-textSecondary text-sm border-t border-white/5 bg-black">
+        <p class="mb-4 font-bold text-white tracking-widest uppercase opacity-50">SoleGoes</p>
+        <p>&copy; 2025 SoleGoes Inc. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Standard Scroll
+        const lenis = new Lenis({
+            smooth: true,
+            lerp: 0.1,
+            wheelMultiplier: 1, 
+            infinite: false,
+        });
+        
+        function raf(time) { 
+            lenis.raf(time); 
+            requestAnimationFrame(raf); 
+        }
+        requestAnimationFrame(raf);
+
+        // --- HORIZONTAL SCROLL LOGIC ---
+        const sections = document.querySelectorAll(".feature-card");
+        const track = document.querySelector(".features-track");
+
+        ScrollTrigger.matchMedia({
+            // DESKTOP: Horizontal Pin
+            "(min-width: 768px)": function() {
+                
+                // Calculate total width to scroll based on number of sections
+                // We want to scroll until the last section is fully visible
+                const totalWidth = track.scrollWidth - window.innerWidth + 100; // Buffer
+
+                gsap.to(track, {
+                    x: () => -(totalWidth),
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "#features-pin",
+                        pin: true,
+                        scrub: 1,
+                        // Duration of the scroll based on content width
+                        end: () => "+=" + (track.scrollWidth * 0.8), 
+                        invalidateOnRefresh: true,
+                    }
+                });
+            },
+            
+            // MOBILE: Simple Vertical Reveal
+            "(max-width: 767px)": function() {
+                sections.forEach((card, i) => {
+                    gsap.from(card, {
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 85%",
+                        },
+                        y: 50,
+                        opacity: 0,
+                        duration: 0.6,
+                        delay: i * 0.1
+                    });
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>

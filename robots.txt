@@ -1,0 +1,15 @@
+# robots.txt for SoleGoes
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://solegoes.netlify.app/sitemap.xml
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Disallow specific paths if needed (currently allowing all)
+# Disallow: /admin/
+# Disallow: /private/

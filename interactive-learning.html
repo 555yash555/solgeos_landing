@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Animation Learning</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .section {
+            min-height: 100vh;
+            padding: 60px 20px;
+            border-bottom: 2px solid #222;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #6366F1;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+        
+        .demo-box {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+        }
+        
+        button:active {
+            transform: scale(0.95);
+        }
+        
+        .slider-group {
+            margin: 20px 0;
+        }
+        
+        .slider-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            color: #8B5CF6;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            background: #333;
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #6366F1;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .value-display {
+            display: inline-block;
+            background: #333;
+            padding: 5px 15px;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-family: monospace;
+            color: #6366F1;
+        }
+        
+        /* Demo 1: Basic Animation */
+        .box {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        /* Demo 2: Lerp Visualization */
+        .lerp-demo {
+            position: relative;
+            height: 150px;
+            background: #0f0f0f;
+            border-radius: 10px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+        
+        .lerp-target {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(99, 102, 241, 0.3);
+            border: 2px dashed #6366F1;
+            border-radius: 50%;
+        }
+        
+        .lerp-current {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #8B5CF6;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+        }
+        
+        /* Demo 3: ScrollTrigger Visualization */
+        .scroll-demo {
+            height: 300vh;
+            position: relative;
+        }
+        
+        .viewport-indicator {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            height: 100vh;
+            border: 3px solid #6366F1;
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        .viewport-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #8B5CF6;
+        }
+        
+        .viewport-line.top { top: 0; }
+        .viewport-line.center { top: 50%; }
+        .viewport-line.bottom { bottom: 0; }
+        
+        .viewport-label {
+            position: absolute;
+            right: 10px;
+            background: #8B5CF6;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            transform: translateY(-50%);
+        }
+        
+        .trigger-element {
+            width: 90%;
+            max-width: 600px;
+            margin: 100vh auto;
+            padding: 60px;
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            border-radius: 20px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        /* Demo 4: 3D Flip */
+        .flip-container {
+            perspective: 1000px;
+            width: 300px;
+            height: 400px;
+            margin: 40px auto;
+        }
+        
+        .flip-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+        
+        .flip-card.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .flip-front {
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+        }
+        
+        .flip-back {
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            transform: rotateY(180deg);
+        }
+        
+        .code-block {
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            color: #6366F1;
+        }
+        
+        .highlight {
+            color: #8B5CF6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Demo 1: Basic GSAP Animation -->
+    <section class="section">
+        <div class="container">
+            <h1>🎯 Demo 1: Basic GSAP Animation</h1>
+            <p>Click the buttons to see how GSAP animates properties. Watch how the box moves smoothly!</p>
+            
+            <div class="demo-box">
+                <div class="controls">
+                    <button onclick="moveRight()">Move Right</button>
+                    <button onclick="moveDown()">Move Down</button>
+                    <button onclick="rotate()">Rotate</button>
+                    <button onclick="scale()">Scale Up</button>
+                    <button onclick="fade()">Fade Out</button>
+                    <button onclick="reset()">Reset</button>
+                </div>
+                
+                <div class="box" id="demo-box"></div>
+                
+                <div class="code-block">
+                    <code>
+gsap.to('#demo-box', {<br>
+&nbsp;&nbsp;<span class="highlight">x: 200</span>,        // Move 200px right<br>
+&nbsp;&nbsp;<span class="highlight">duration: 1</span>,   // Take 1 second<br>
+&nbsp;&nbsp;<span class="highlight">ease: 'power2.out'</span> // Smooth easing<br>
+});
+                    </code>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Demo 2: Lerp Interpolation -->
+    <section class="section">
+        <div class="container">
+            <h1>🎯 Demo 2: Lerp Interpolation (Smooth Scrolling)</h1>
+            <p>This shows how <strong>lerp</strong> creates smooth movement. The purple circle follows the target position.</p>
+            
+            <div class="demo-box">
+                <div class="slider-group">
+                    <label>
+                        Lerp Value: <span class="value-display" id="lerp-value">0.1</span>
+                    </label>
+                    <input type="range" id="lerp-slider" min="0.01" max="0.5" step="0.01" value="0.1">
+                    <p style="font-size: 0.9rem; margin-top: 10px;">
+                        Lower = Smoother but slower | Higher = Faster but less smooth
+                    </p>
+                </div>
+                
+                <button onclick="setRandomTarget()">Set Random Target</button>
+                
+                <div class="lerp-demo">
+                    <div class="lerp-target" id="lerp-target"></div>
+                    <div class="lerp-current" id="lerp-current"></div>
+                </div>
+                
+                <div class="code-block">
+                    <code>
+// Lerp formula:<br>
+newPos = currentPos + (targetPos - currentPos) × <span class="highlight">lerp</span><br>
+<br>
+// Example with lerp = 0.1:<br>
+Frame 1: 0 + (100 - 0) × 0.1 = <span class="highlight">10</span><br>
+Frame 2: 10 + (100 - 10) × 0.1 = <span class="highlight">19</span><br>
+Frame 3: 19 + (100 - 19) × 0.1 = <span class="highlight">27.1</span><br>
+...gradually approaches 100
+                    </code>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Demo 3: ScrollTrigger Visualization -->
+    <section class="section">
+        <div class="container">
+            <h1>🎯 Demo 3: ScrollTrigger Points</h1>
+            <p>Scroll down to see how ScrollTrigger works. The blue box shows the viewport, and the purple lines show trigger points.</p>
+            
+            <div class="demo-box">
+                <p><strong>Instructions:</strong> Scroll down slowly and watch the element change as it crosses the trigger lines!</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="scroll-demo">
+        <div class="viewport-indicator">
+            <div class="viewport-line top">
+                <span class="viewport-label">top</span>
+            </div>
+            <div class="viewport-line center">
+                <span class="viewport-label">center (50%)</span>
+            </div>
+            <div class="viewport-line bottom">
+                <span class="viewport-label">bottom</span>
+            </div>
+        </div>
+        
+        <div class="trigger-element" id="trigger-element">
+            Scroll to trigger!
+        </div>
+    </div>
+    
+    <!-- Demo 4: 3D Flip -->
+    <section class="section">
+        <div class="container">
+            <h1>🎯 Demo 4: 3D Card Flip</h1>
+            <p>This demonstrates how the phone flip works using CSS 3D transforms.</p>
+            
+            <div class="demo-box">
+                <button onclick="flipCard()">Flip Card</button>
+                
+                <div class="flip-container">
+                    <div class="flip-card" id="flip-card">
+                        <div class="flip-face flip-front">
+                            FRONT<br>
+                            <span style="font-size: 1rem;">rotateY: 0°</span>
+                        </div>
+                        <div class="flip-face flip-back">
+                            BACK<br>
+                            <span style="font-size: 1rem;">rotateY: 180°</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-block">
+                    <code>
+.flip-card {<br>
+&nbsp;&nbsp;<span class="highlight">transform-style: preserve-3d;</span><br>
+}<br>
+<br>
+.flip-front {<br>
+&nbsp;&nbsp;<span class="highlight">backface-visibility: hidden;</span><br>
+&nbsp;&nbsp;transform: rotateY(0deg);<br>
+}<br>
+<br>
+.flip-back {<br>
+&nbsp;&nbsp;<span class="highlight">backface-visibility: hidden;</span><br>
+&nbsp;&nbsp;transform: rotateY(180deg);<br>
+}
+                    </code>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Demo 1: Basic Animations
+        function moveRight() {
+            gsap.to('#demo-box', { x: 200, duration: 1, ease: 'power2.out' });
+        }
+        
+        function moveDown() {
+            gsap.to('#demo-box', { y: 100, duration: 1, ease: 'power2.out' });
+        }
+        
+        function rotate() {
+            gsap.to('#demo-box', { rotation: 360, duration: 1, ease: 'power2.out' });
+        }
+        
+        function scale() {
+            gsap.to('#demo-box', { scale: 1.5, duration: 1, ease: 'back.out(1.7)' });
+        }
+        
+        function fade() {
+            gsap.to('#demo-box', { opacity: 0.2, duration: 1, ease: 'power2.out' });
+        }
+        
+        function reset() {
+            gsap.to('#demo-box', { 
+                x: 0, 
+                y: 0, 
+                rotation: 0, 
+                scale: 1, 
+                opacity: 1, 
+                duration: 1, 
+                ease: 'power2.inOut' 
+            });
+        }
+        
+        // Demo 2: Lerp Interpolation
+        let targetX = 50;
+        let currentX = 50;
+        let lerpValue = 0.1;
+        
+        const lerpSlider = document.getElementById('lerp-slider');
+        const lerpValueDisplay = document.getElementById('lerp-value');
+        const lerpTarget = document.getElementById('lerp-target');
+        const lerpCurrent = document.getElementById('lerp-current');
+        
+        lerpSlider.addEventListener('input', (e) => {
+            lerpValue = parseFloat(e.target.value);
+            lerpValueDisplay.textContent = lerpValue.toFixed(2);
+        });
+        
+        function setRandomTarget() {
+            const maxX = document.querySelector('.lerp-demo').offsetWidth - 40;
+            targetX = Math.random() * maxX;
+            lerpTarget.style.left = targetX + 'px';
+        }
+        
+        function updateLerp() {
+            // Lerp formula
+            currentX = currentX + (targetX - currentX) * lerpValue;
+            lerpCurrent.style.left = currentX + 'px';
+            
+            requestAnimationFrame(updateLerp);
+        }
+        
+        updateLerp();
+        
+        // Demo 3: ScrollTrigger
+        ScrollTrigger.create({
+            trigger: '#trigger-element',
+            start: 'top center',
+            end: 'bottom center',
+            onEnter: () => {
+                gsap.to('#trigger-element', { 
+                    scale: 1.1, 
+                    backgroundColor: '#EC4899',
+                    duration: 0.5 
+                });
+            },
+            onLeave: () => {
+                gsap.to('#trigger-element', { 
+                    scale: 1, 
+                    background: 'linear-gradient(135deg, #6366F1, #8B5CF6)',
+                    duration: 0.5 
+                });
+            },
+            onEnterBack: () => {
+                gsap.to('#trigger-element', { 
+                    scale: 1.1, 
+                    backgroundColor: '#EC4899',
+                    duration: 0.5 
+                });
+            },
+            onLeaveBack: () => {
+                gsap.to('#trigger-element', { 
+                    scale: 1, 
+                    background: 'linear-gradient(135deg, #6366F1, #8B5CF6)',
+                    duration: 0.5 
+                });
+            }
+        });
+        
+        // Demo 4: 3D Flip
+        let isFlipped = false;
+        
+        function flipCard() {
+            const card = document.getElementById('flip-card');
+            isFlipped = !isFlipped;
+            
+            if (isFlipped) {
+                card.classList.add('flipped');
+            } else {
+                card.classList.remove('flipped');
+            }
+        }
+    </script>
+</body>
+</html>

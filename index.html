@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Primary Meta Tags -->
+    <title>SoleGoes - Solo Travel Made Social | Find Group Trips & Travel Companions</title>
+    <meta name="title" content="SoleGoes - Solo Travel Made Social | Find Group Trips & Travel Companions">
+    <meta name="description" content="Join verified group trips for solo travelers. Connect with like-minded adventurers, chat before you go, and explore destinations together. Book secure group travel experiences with trusted agencies.">
+    <meta name="keywords" content="solo travel, group trips, travel companions, verified travel agencies, trip booking, adventure travel, backpacking trips, solo travelers community, group travel marketplace, travel social network, trip management, secure travel payments, travel booking platform, Gen Z travel, youth travel, adventure groups">
+    <meta name="author" content="SoleGoes">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://solegoes.netlify.app/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solegoes.netlify.app/">
+    <meta property="og:title" content="SoleGoes - Solo Travel Made Social | Find Group Trips">
+    <meta property="og:description" content="The first social marketplace for verified group trips. Connect, chat, and travel with your tribe. Solo but not alone.">
+    <meta property="og:image" content="https://solegoes.netlify.app/logo_final.jpg">
+    <meta property="og:site_name" content="SoleGoes">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://solegoes.netlify.app/">
+    <meta name="twitter:title" content="SoleGoes - Solo Travel Made Social">
+    <meta name="twitter:description" content="Join verified group trips for solo travelers. Connect, chat, and explore together.">
+    <meta name="twitter:image" content="https://solegoes.netlify.app/logo_final.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#6366F1">
+    <meta name="msapplication-TileColor" content="#6366F1">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="IN">
+    <meta name="geo.placename" content="India">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deep: '#050505',
+                        surface: '#121212',
+                        primary: '#6366F1',
+                        violet: '#8B5CF6',
+                        textPrimary: '#FAFAFA',
+                        textSecondary: '#A1A1AA',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'primary-gradient': 'linear-gradient(135deg, #6366F1, #8B5CF6)',
+                        'glow-radial': 'radial-gradient(circle closest-side, rgba(99,102,241,0.15), transparent)',
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(99,102,241,0.4)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- GSAP & Lenis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <style>
+        body { background-color: #050505; color: #FAFAFA; overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .preserve-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+    </style>
+</head>
+<body>
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SoleGoes",
+        "description": "Social marketplace for verified group trips for solo travelers",
+        "url": "https://solegoes.netlify.app",
+        "logo": "https://solegoes.netlify.app/logo_final.jpg",
+        "sameAs": [
+            "https://www.instagram.com/solegoes",
+            "https://www.facebook.com/solegoes",
+            "https://twitter.com/solegoes"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "email": "hello@solegoes.com"
+        },
+        "offers": {
+            "@type": "AggregateOffer",
+            "offerCount": "100+",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "India"
+        },
+        "serviceType": [
+            "Group Travel Booking",
+            "Solo Travel Marketplace",
+            "Trip Management Platform",
+            "Travel Agency Verification"
+        ]
+    }
+    </script>
+    
+    <!-- Full-screen Flash Overlay -->
+    <div id="screen-flash" class="fixed inset-0 bg-white opacity-0 pointer-events-none z-[100]"></div>
+
+    <!-- Nav -->
+    <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center mix-blend-difference text-white">
+        <div class="glass px-6 py-3 rounded-full flex items-center gap-8 shadow-glass bg-black/50 backdrop-blur-md border border-white/10">
+            <a href="index.html" class="font-bold text-lg tracking-tight flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <div class="w-2 h-2 rounded-full bg-primary shadow-neon"></div> SoleGoes
+            </a>
+            <div class="hidden md:flex items-center gap-2 text-sm font-medium text-gray-300">
+                <a href="#features" class="bg-white/10 text-white px-4 py-2 rounded-full transition-colors">Features</a>
+                <a href="partner.html" class="px-4 py-2 hover:bg-white/5 rounded-full transition-colors">For Agencies</a>
+            </div>
+            <button class="bg-white text-black px-4 py-1.5 rounded-full text-sm font-bold hover:bg-gray-200 transition-colors">Join Waitlist</button>
+        </div>
+    </nav>
+
+    <!-- Hero / Intro -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Ambient -->
+        <div class="absolute top-[10%] left-[20%] w-[300px] h-[300px] bg-primary/40 rounded-full blur-[100px] opacity-60 animate-pulse"></div>
+        <div class="absolute bottom-[20%] right-[20%] w-[400px] h-[400px] bg-violet/40 rounded-full blur-[120px] opacity-60"></div>
+
+        <div class="text-center z-10 px-4 max-w-5xl mx-auto mt-[-5vh]">
+            <h1 class="text-5xl md:text-9xl font-black tracking-tighter mb-6 leading-[0.9] md:leading-none select-none">
+                SOLO BUT<br>
+                <span class="text-primary">NOT ALONE.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-textSecondary max-w-2xl mx-auto mb-10 font-medium">
+                The first social marketplace for verified group trips.<br>
+                <span class="text-gray-400">Connect, chat, and travel with your tribe.</span>
+            </p>
+            
+            <div class="flex items-center justify-center gap-4 mb-20">
+                 <div class="flex -space-x-3">
+                    <div class="w-10 h-10 rounded-full border-2 border-black bg-gray-700 overflow-hidden"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" class="w-full h-full object-cover"></div>
+                    <div class="w-10 h-10 rounded-full border-2 border-black bg-gray-700 overflow-hidden"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" class="w-full h-full object-cover"></div>
+                    <div class="w-10 h-10 rounded-full border-2 border-black bg-gray-700 overflow-hidden"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=64&h=64" class="w-full h-full object-cover"></div>
+                    <div class="w-10 h-10 rounded-full border-2 border-black bg-white/10 flex items-center justify-center text-xs font-bold backdrop-blur-sm">+2k</div>
+                 </div>
+                 <span class="text-sm text-textSecondary font-semibold tracking-wide uppercase">on the waitlist</span>
+            </div>
+            
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-textSecondary opacity-50">
+                <i data-lucide="arrow-down" class="w-6 h-6"></i>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- SCROLLYTELLING PINNED SECTION -->
+    <section class="relative bg-deep w-full" id="scrolly-section">
+        
+        <div class="container mx-auto px-4 md:px-8 relative min-h-[500vh]">
+            <div class="flex flex-col lg:flex-row h-full">
+                
+                <!-- PHONE COLUMN (Fixed) -->
+                <!-- Mobile: Fixed center background. Desktop: Fixed right side. -->
+                <div class="fixed top-0 left-0 w-full lg:left-auto lg:right-0 lg:w-1/2 h-screen z-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" id="pinned-phone-wrapper" style="perspective: 2000px;">
+                    
+                    <!-- Glow -->
+                    <div class="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-primary/20 blur-[80px] md:blur-[100px] rounded-full transition-colors duration-700 ease-in-out" id="phone-glow"></div>
+
+                    <!-- Phone Frame: Thicker border for better visualization (12px), rounded corners -->
+                    <!-- Added p-1 inner padding to zoom out screenshot slightly -->
+                    <!-- Phone Frame -->
+                    <div class="relative w-[280px] h-[580px] md:w-[340px] md:h-[700px] preserve-3d scale-90 md:scale-100" id="phone-mockup" style="transform-style: preserve-3d;">
+                        
+                        <!-- FRONT FACE -->
+                        <div class="absolute inset-0 bg-black rounded-[45px] border-[12px] border-[#222] shadow-2xl overflow-hidden backface-hidden z-20 p-1" style="transform: rotateY(0deg); backface-visibility: hidden;">
+                            <div class="relative w-full h-full bg-[#121212] rounded-[32px] overflow-hidden">
+                                <img src="assets/screenshots/explore_screen.jpg" class="screen-img absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500 ease-in-out" data-step="0">
+                                <img src="assets/screenshots/trip_detail_ladakh.jpg" class="screen-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out" data-step="1">
+                                <img src="assets/screenshots/chat_list.jpg" class="screen-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out" data-step="2">
+                                <img src="assets/screenshots/payment_success.jpg" class="screen-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out" data-step="3">
+                            </div>
+                            <!-- Ready Message (Overlay on Front) -->
+                            <div id="ready-msg" class="absolute inset-0 flex items-center justify-center bg-black/90 opacity-0 pointer-events-none z-40 rounded-[45px]">
+                                <h3 class="text-3xl font-black text-white text-center px-4 leading-tight">
+                                    Ready for<br><span class="text-primary">Next Trip?</span>
+                                </h3>
+                            </div>
+                            <!-- Glossy Reflection -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none z-20 rounded-[45px]"></div>
+                        </div>
+
+                        <!-- BACK FACE -->
+                        <div class="absolute inset-0 bg-[#1a1a1a] rounded-[45px] border-[12px] border-[#222] shadow-2xl backface-hidden flex flex-col items-center pt-24 z-10" style="transform: rotateY(180deg); backface-visibility: hidden;">
+                            <!-- Camera Bump -->
+                            <div class="w-24 h-48 bg-[#121212] rounded-[30px] border border-white/5 shadow-inner p-4 flex flex-col gap-4 items-center">
+                                <div class="w-12 h-12 rounded-full bg-black border-[3px] border-[#222] relative overflow-hidden">
+                                    <div class="absolute inset-1 rounded-full bg-gradient-to-tr from-[#333] to-transparent"></div>
+                                </div>
+                                <div class="w-12 h-12 rounded-full bg-black border-[3px] border-[#222] relative overflow-hidden">
+                                    <div class="absolute inset-1 rounded-full bg-gradient-to-tr from-[#333] to-transparent"></div>
+                                </div>
+                                <!-- Flash LED -->
+                                <div id="camera-flash" class="w-6 h-6 rounded-full bg-white/10 border border-white/20 transition-all duration-100"></div>
+                            </div>
+                            <!-- Logo Placeholder -->
+                            <div class="mt-20 opacity-20 font-black text-xl tracking-widest uppercase text-white">SoleGoes</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- LEFT COLUMN: SCROLLING TEXT -->
+                <!-- Mobile: Scrolls OVER the phone. Desktop: Scrolls in its column. -->
+                <div class="w-full lg:w-1/2 flex flex-col relative z-20 pb-[20vh] space-y-[40vh] md:space-y-[15vh] pt-[20vh] md:pt-[15vh]">
+                    
+                    <!-- Step 1 -->
+                    <div class="step-card flex flex-col justify-center p-8 rounded-3xl md:p-0 md:rounded-none bg-black/60 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border border-white/10 md:border-none pr-0 md:pr-10 opacity-30 transition-all duration-300 transform translate-y-4 md:translate-y-0" data-index="0">
+                        <div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 border border-primary/30 text-primary">
+                            <i data-lucide="search" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-4xl md:text-7xl font-bold mb-6">Find Your Vibe</h2>
+                        <p class="text-lg md:text-xl text-textSecondary leading-relaxed max-w-md">
+                            Doom scrolling is over. Filter verified trips by vibe: <span class="text-white">Partying in Goa</span>, <span class="text-white">Backpacking Manali</span>, or <span class="text-white">Chilling in Kerala</span>.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card flex flex-col justify-center p-8 rounded-3xl md:p-0 md:rounded-none bg-black/60 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border border-white/10 md:border-none pr-0 md:pr-10 opacity-30 transition-all duration-300 transform translate-y-4 md:translate-y-0" data-index="1">
+                        <div class="w-12 h-12 rounded-2xl bg-violet/20 flex items-center justify-center mb-6 border border-violet/30 text-violet">
+                            <i data-lucide="file-check" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-4xl md:text-7xl font-bold mb-6">Know Before You Go</h2>
+                        <p class="text-lg md:text-xl text-textSecondary leading-relaxed max-w-md">
+                            Detailed itineraries, transparent pricing, and verified agency profiles. No hidden costs, no nasty surprises.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card flex flex-col justify-center p-8 rounded-3xl md:p-0 md:rounded-none bg-black/60 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border border-white/10 md:border-none pr-0 md:pr-10 opacity-30 transition-all duration-300 transform translate-y-4 md:translate-y-0" data-index="2">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-500/20 flex items-center justify-center mb-6 border border-pink-500/30 text-pink-500">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-4xl md:text-7xl font-bold mb-6">Solo, Not Alone</h2>
+                        <p class="text-lg md:text-xl text-textSecondary leading-relaxed max-w-md">
+                            Join the trip group chat instantly. Break the ice, plan logistics, and see who's bringing the guitar 🎸 before you leave home.
+                        </p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-card flex flex-col justify-center p-8 rounded-3xl md:p-0 md:rounded-none bg-black/60 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border border-white/10 md:border-none pr-0 md:pr-10 opacity-30 transition-all duration-300 transform translate-y-4 md:translate-y-0" data-index="3">
+                        <div class="w-12 h-12 rounded-2xl bg-green-500/20 flex items-center justify-center mb-6 border border-green-500/30 text-green-500">
+                            <i data-lucide="credit-card" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-4xl md:text-7xl font-bold mb-6">Split & Secure</h2>
+                        <p class="text-lg md:text-xl text-textSecondary leading-relaxed max-w-md">
+                            Pay via UPI or Card securely on the app. Split costs with friends easily. Your money is safe with us.
+                        </p>
+                        <div class="mt-8">
+                            <button class="bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform">Join the Club</button>
+                        </div>
+                    </div>
+
+                    <!-- Final Spacer for Animation Trigger (Increased room for flip + HOLD) -->
+                    <div class="h-[200vh] flex items-center justify-center" id="final-trigger-spacer">
+                        <!-- Invisible trigger point -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Endless Marquee -->
+    <div class="py-24 border-y border-white/5 bg-surface/50 overflow-hidden relative" style="background: #09090b; z-index: 30;">
+        <div class="flex whitespace-nowrap gap-16 animate-marquee opacity-30 text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-transparent uppercase tracking-tighter">
+            <span>Manali</span> <span>Kasol</span> <span>Goa</span> <span>Bali</span> <span>Vietnam</span> <span>Ladakh</span> <span>Meghalaya</span> <span>Spiti</span>
+            <span>Manali</span> <span>Kasol</span> <span>Goa</span> <span>Bali</span> <span>Vietnam</span> <span>Ladakh</span> <span>Meghalaya</span> <span>Spiti</span>
+        </div>
+    </div>
+    <style>
+        .animate-marquee { animation: marquee 40s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    </style>
+
+    <!-- Agencies -->
+    <section class="py-32 px-6 relative z-30 bg-deep" id="agencies">
+        <div class="glass max-w-6xl mx-auto rounded-[3rem] p-12 md:p-24 relative overflow-hidden border border-white/10 shadow-2xl">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-violet/30 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/30 blur-[100px] rounded-full -translate-x-1/2 translate-y-1/2"></div>
+            <div class="relative z-10 flex flex-col md:flex-row gap-16 items-center">
+                <div class="flex-1 text-left">
+                     <div class="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 text-violet-300 font-bold uppercase text-xs tracking-widest mb-6">For Partners</div>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Grow your travel business <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">effortlessly.</span></h2>
+                    <p class="text-xl text-textSecondary mb-10 leading-relaxed">
+                        Agencies on SoleGoes get a dedicated dashboard, automated payments, and direct access to the Gen Z market.
+                    </p>
+                    <a href="partner.html" class="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-200 hover:-translate-y-1 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                        Become a Partner <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-4 flex-1 w-full">
+                    <div class="bg-black/40 p-6 rounded-3xl border border-white/5 backdrop-blur-sm">
+                        <div class="text-3xl font-bold text-white mb-1">0%</div>
+                        <div class="text-sm text-textSecondary">Commission for<br>Founding Partners</div>
+                    </div>
+                    <div class="bg-black/40 p-6 rounded-3xl border border-white/5 backdrop-blur-sm">
+                        <div class="text-3xl font-bold text-white mb-1">24h</div>
+                        <div class="text-sm text-textSecondary">Payout<br>Settlement</div>
+                    </div>
+                     <div class="bg-black/40 p-6 rounded-3xl border border-white/5 backdrop-blur-sm col-span-2">
+                        <div class="text-3xl font-bold text-white mb-1">10k+</div>
+                        <div class="text-sm text-textSecondary">Active Monthly Users Waiting</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-textSecondary text-sm border-t border-white/5 bg-black z-30 relative">
+        <p class="mb-4 font-bold text-white tracking-widest uppercase opacity-50">SoleGoes</p>
+        <p>&copy; 2025 SoleGoes Inc. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        gsap.registerPlugin(ScrollTrigger);
+
+        // OPTIMIZED SCROLL SETTINGS for "Slow/Heavy" feel
+        const lenis = new Lenis({
+            smooth: true,
+            lerp: 0.1, 
+            wheelMultiplier: 0.3, // Reduced scroll speed
+            touchMultiplier: 0.8, 
+            infinite: false,
+        });
+        
+        function raf(time) { 
+            lenis.raf(time); 
+            requestAnimationFrame(raf); 
+        }
+        requestAnimationFrame(raf);
+
+        // --- SCROLL SYNC LOGIC ---
+
+        const mm = gsap.matchMedia();
+
+        // ENABLED GLOBALLY (No min-width constrained for logic)
+        // Desktop Logic
+        mm.add("(min-width: 1024px)", () => {
+            const phoneWrapper = document.querySelector('#pinned-phone-wrapper');
+            const finalTrigger = document.querySelector('#final-trigger-spacer');
+            
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: finalTrigger,
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: 2
+                }
+            }).to(phoneWrapper, {
+                left: 0,
+                width: "100%",
+                duration: 1.5,
+                ease: "power2.inOut"
+            }, 0);
+        });
+
+        // Global Logic (Animations on phone itself)
+        mm.add("(min-width: 1px)", () => {
+            
+            // Elements
+            const phoneWrapper = document.querySelector('#pinned-phone-wrapper');
+            const phoneImages = document.querySelectorAll('.screen-img');
+            const glow = document.querySelector('#phone-glow');
+            const stepCards = document.querySelectorAll('.step-card');
+            const colors = ['#6366F1', '#8B5CF6', '#EC4899', '#22C55E'];
+
+            // 1. Manage Global Visibility
+            ScrollTrigger.create({
+                trigger: "#scrolly-section",
+                start: "top center", 
+                end: "bottom bottom", // Stay until the spacer is fully scrolled
+                onEnter: () => gsap.to(phoneWrapper, { opacity: 1, duration: 0.5 }),
+                onEnterBack: () => gsap.to(phoneWrapper, { opacity: 1, duration: 0.5 }),
+                onLeave: () => gsap.to(phoneWrapper, { opacity: 0, duration: 0.5 }),
+                onLeaveBack: () => gsap.to(phoneWrapper, { opacity: 0, duration: 0.5 }),
+            });
+
+            // 2. Step-by-Step Triggers
+            stepCards.forEach((step, index) => {
+                ScrollTrigger.create({
+                    trigger: step,
+                    // Slightly more forgiving trigger zone for smoothness
+                    start: "top 70%", 
+                    end: "bottom 30%",
+                    onEnter: () => updatePhone(index),
+                    onEnterBack: () => updatePhone(index),
+                });
+            });
+
+            function updatePhone(index) {
+                // Change Image
+                phoneImages.forEach((img, i) => {
+                    if(i === index) {
+                        img.style.opacity = 1;
+                        img.style.transform = 'scale(1)';
+                    } else {
+                        img.style.opacity = 0;
+                        img.style.transform = 'scale(1.02)';
+                    }
+                });
+
+                // Change Glow
+                if(glow) glow.style.backgroundColor = colors[index] + '60';
+
+                // Highlight Text
+                stepCards.forEach((card, i) => {
+                    if (i === index) {
+                        gsap.to(card, { opacity: 1, duration: 0.3, scale: 1 });
+                    } else {
+                        gsap.to(card, { opacity: 0.3, duration: 0.3, scale: 0.98 });
+                    }
+                });
+            }
+            
+            // Initialize first state
+            updatePhone(0);
+            gsap.set("#phone-mockup", { transformPerspective: 2000, rotateY: 0, rotateX: 0 });
+            gsap.set("#ready-msg", { scale: 0.5 }); 
+
+            // 3. FINAL SEQUENCE: Rotate -> Flip (implied by 90deg) -> Click Photo -> Message
+            // Triggered by the final spacer coming into view
+            const finalTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#final-trigger-spacer",
+                    start: "top center",
+                    end: "bottom center", // Finish animation when spacer is halfway through viewport
+                    scrub: 2, 
+                }
+            });
+
+            finalTimeline
+                .to("#phone-mockup", { 
+                    rotateY: 180, 
+                    scale: 0.8,
+                    duration: 1.5,
+                    ease: "power2.inOut"
+                }, 0) // Flip to Back (starts at same time as move on desktop)
+                .to({}, { duration: 0.5 }) // Initial hold on back
+                .to("#camera-flash", { 
+                    backgroundColor: "#fff",
+                    boxShadow: "0 0 60px 20px #fff, 0 0 100px 40px rgba(255,255,255,0.5)",
+                    duration: 0.25, 
+                    yoyo: true, 
+                    repeat: 1 
+                }) // Camera LED Flash
+                .to("#screen-flash", {
+                    opacity: 0.9,
+                    duration: 0.25,
+                    yoyo: true,
+                    repeat: 1
+                }, "<") // Sync Full-screen Flash with LED flash
+                .to({}, { duration: 1.2 }) // Longer HOLD on back after flash
+                .to("#phone-mockup", { 
+                    rotateY: 360, // Flip back to front
+                    scale: 1,
+                    duration: 1.5,
+                    ease: "power2.inOut"
+                })
+                .to("#ready-msg", {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.8,
+                    ease: "back.out(1.7)"
+                }, "-=0.2"); // Show message pop up as it finishes return rotation
+
+        }); // end matchMedia
+    </script>
+</body>
+</html>
