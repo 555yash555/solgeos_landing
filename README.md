@@ -3,7 +3,7 @@
 Official landing page for SoleGoes - The social marketplace for verified group trips.
 
 ## 🌐 Live Site
-https://solegoes.netlify.app
+https://solegoes.in
 
 ## 📋 Features
 - Responsive design (mobile-first)

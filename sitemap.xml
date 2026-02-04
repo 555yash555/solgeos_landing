@@ -6,7 +6,7 @@
     
     <!-- Homepage -->
     <url>
-        <loc>https://solegoes.netlify.app/</loc>
+        <loc>https://solegoes.in/</loc>
         <lastmod>2026-02-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -14,18 +14,10 @@
     
     <!-- Partner Page -->
     <url>
-        <loc>https://solegoes.netlify.app/partner.html</loc>
+        <loc>https://solegoes.in/partner.html</loc>
         <lastmod>2026-02-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-    </url>
-    
-    <!-- Interactive Learning (if you want to index it) -->
-    <url>
-        <loc>https://solegoes.netlify.app/interactive-learning.html</loc>
-        <lastmod>2026-02-04</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
     </url>
     
 </urlset>

@@ -4,12 +4,13 @@
 User-agent: *
 Allow: /
 
+# Disallow internal pages
+Disallow: /interactive-learning.html
+Disallow: /BEGINNER_GUIDE.md
+Disallow: /TECHNICAL_EXPLANATION.md
+
 # Sitemap location
-Sitemap: https://solegoes.netlify.app/sitemap.xml
+Sitemap: https://solegoes.in/sitemap.xml
 
 # Crawl delay (optional, helps prevent server overload)
 Crawl-delay: 1
-
-# Disallow specific paths if needed (currently allowing all)
-# Disallow: /admin/
-# Disallow: /private/
