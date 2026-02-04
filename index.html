@@ -369,6 +369,8 @@
                     <input type="hidden" name="access_key" value="aecf6c2a-c5dc-4daa-b9cc-b8de2830fa9f">
                     <input type="hidden" name="subject" value="New SoleGoes Waitlist Signup">
                     <input type="hidden" name="from_name" value="SoleGoes Waitlist">
+                    <!-- Mark as waitlist signup -->
+                    <input type="hidden" name="agency_name" value="WAITLIST SIGNUP">
                     
                     <div>
                         <label for="name" class="block text-sm font-medium text-textSecondary mb-2">Name</label>
@@ -395,15 +397,26 @@
                     </div>
                     
                     <div>
-                        <label for="interest" class="block text-sm font-medium text-textSecondary mb-2">I'm interested in</label>
+                        <label for="phone" class="block text-sm font-medium text-textSecondary mb-2">Phone (Optional)</label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="+91 98765 43210"
+                            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-textSecondary focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="instagram" class="block text-sm font-medium text-textSecondary mb-2">I'm interested in</label>
                         <select 
-                            id="interest" 
-                            name="interest"
+                            id="instagram" 
+                            name="instagram"
                             class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         >
-                            <option value="traveler">Finding group trips (Traveler)</option>
-                            <option value="agency">Listing trips (Travel Agency)</option>
-                            <option value="both">Both</option>
+                            <option value="Traveler - Finding group trips">Finding group trips (Traveler)</option>
+                            <option value="Agency - Listing trips">Listing trips (Travel Agency)</option>
+                            <option value="Both - Traveler and Agency">Both</option>
                         </select>
                     </div>
                     
@@ -665,7 +678,8 @@
                     const waitlistData = {
                         name: formData.get('name'),
                         email: formData.get('email'),
-                        interest: formData.get('interest'),
+                        phone: formData.get('phone') || 'Not provided',
+                        interest: formData.get('instagram'), // Using instagram field for interest
                         timestamp: new Date().toISOString()
                     };
                     
