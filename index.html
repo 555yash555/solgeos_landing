@@ -141,8 +141,8 @@
     <!-- Full-screen Flash Overlay -->
     <div id="screen-flash" class="fixed inset-0 bg-white opacity-0 pointer-events-none z-[100]"></div>
 
-    <!-- Pre-Launch Banner -->
-    <div class="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary to-violet py-2.5 px-4 text-center shadow-lg">
+    <!-- Pre-Launch Banner (Hidden initially, shows after hero scroll) -->
+    <div id="pre-launch-banner" class="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary to-violet py-2.5 px-4 text-center shadow-lg opacity-0 -translate-y-full transition-all duration-300 pointer-events-none">
         <p class="text-white text-sm font-semibold">
             <span class="inline-flex items-center justify-center gap-2 flex-wrap">
                 <span class="inline-flex items-center gap-1.5">
@@ -152,13 +152,13 @@
                 </span>
                 <span class="hidden md:inline text-white/90">|</span>
                 <span class="hidden md:inline text-white/90">Looking for Founding Partners & Early Travelers</span>
-                <a href="#founding-partners" class="ml-1 underline hover:no-underline font-bold">Learn More →</a>
+                <a href="#founding-partners" class="ml-1 underline hover:no-underline font-bold pointer-events-auto">Learn More →</a>
             </span>
         </p>
     </div>
 
     <!-- Nav -->
-    <nav class="fixed top-10 left-0 right-0 z-50 flex justify-center mix-blend-difference text-white">
+    <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center mix-blend-difference text-white">
         <div class="glass px-6 py-3 rounded-full flex items-center gap-8 shadow-glass bg-black/50 backdrop-blur-md border border-white/10">
             <a href="#" class="font-bold text-lg tracking-tight flex items-center gap-2 hover:opacity-80 transition-opacity">
                 <div class="w-2 h-2 rounded-full bg-primary shadow-neon"></div> SoleGoes
@@ -646,6 +646,29 @@
             requestAnimationFrame(raf); 
         }
         requestAnimationFrame(raf);
+
+        // Show/Hide Pre-Launch Banner on Scroll
+        const preLaunchBanner = document.getElementById('pre-launch-banner');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const heroHeight = window.innerHeight; // Hero is full screen
+            
+            if (currentScroll > heroHeight * 0.8) {
+                // Show banner after scrolling 80% of hero
+                preLaunchBanner.classList.remove('opacity-0', '-translate-y-full');
+                preLaunchBanner.classList.add('opacity-100', 'translate-y-0');
+                preLaunchBanner.classList.remove('pointer-events-none');
+            } else {
+                // Hide banner when at top
+                preLaunchBanner.classList.add('opacity-0', '-translate-y-full');
+                preLaunchBanner.classList.remove('opacity-100', 'translate-y-0');
+                preLaunchBanner.classList.add('pointer-events-none');
+            }
+            
+            lastScroll = currentScroll;
+        });
 
         // --- SCROLL SYNC LOGIC ---
 
