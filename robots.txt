@@ -4,13 +4,8 @@
 User-agent: *
 Allow: /
 
-# Disallow internal pages
-Disallow: /interactive-learning.html
-Disallow: /BEGINNER_GUIDE.md
-Disallow: /TECHNICAL_EXPLANATION.md
+# Disallow internal/hidden folders
+Disallow: /.superdesign/
 
 # Sitemap location
 Sitemap: https://solegoes.in/sitemap.xml
-
-# Crawl delay (optional, helps prevent server overload)
-Crawl-delay: 1

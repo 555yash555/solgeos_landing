@@ -7,8 +7,8 @@
     <!-- Primary Meta Tags -->
     <title>SoleGoes - Solo Travel Made Social | Find Group Trips & Travel Companions</title>
     <meta name="title" content="SoleGoes - Solo Travel Made Social | Find Group Trips & Travel Companions">
-    <meta name="description" content="Join verified group trips for solo travelers. Connect with like-minded adventurers, chat before you go, and explore destinations together. Book secure group travel experiences with trusted agencies.">
-    <meta name="keywords" content="solo travel, group trips, travel companions, verified travel agencies, trip booking, adventure travel, backpacking trips, solo travelers community, group travel marketplace, travel social network, trip management, secure travel payments, travel booking platform, Gen Z travel, youth travel, adventure groups">
+    <meta name="description" content="Friends not free? Go anyway. SoleGoes connects solo travelers with verified group trips. Meet your tribe, chat before you go, and make memories with fellow mates. Solo but, not alone.">
+    <meta name="keywords" content="solo but not alone, make friends on trips, group trips for solo travelers, solo group travel India, travel with strangers India, weekend trips from Bangalore, find travel buddies, solo travel for mental health, group trip planner India, verified travel agencies, adventure travel, backpacking trips, Gen Z travel, experiential travel India, vibe based group trips, weekend getaways, sandwich leave trips">
     <meta name="author" content="SoleGoes">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
@@ -27,7 +27,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://solegoes.in/">
     <meta property="og:title" content="SoleGoes - Solo Travel Made Social | Find Group Trips">
-    <meta property="og:description" content="The first social marketplace for verified group trips. Connect, chat, and travel with your tribe. Solo but not alone.">
+    <meta property="og:description" content="Friends not free? Go anyway. Meet your tribe on the way. Verified group trips for solo travelers who want real experiences, not just packages.">
     <meta property="og:image" content="https://solegoes.in/logo_final.jpg">
     <meta property="og:site_name" content="SoleGoes">
     <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://solegoes.in/">
     <meta name="twitter:title" content="SoleGoes - Solo Travel Made Social">
-    <meta name="twitter:description" content="Join verified group trips for solo travelers. Connect, chat, and explore together.">
+    <meta name="twitter:description" content="Friends not free? Go anyway. Meet your tribe on the way. Solo but, not alone.">
     <meta name="twitter:image" content="https://solegoes.in/logo_final.jpg">
     
     <!-- Favicon -->
@@ -101,6 +101,7 @@
         ::-webkit-scrollbar-track { background: #09090b; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .preserve-3d { transform-style: preserve-3d; }
         .backface-hidden { backface-visibility: hidden; }
     </style>
@@ -144,6 +145,56 @@
     }
     </script>
     
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I find group trips for solo travelers in India?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "SoleGoes is a marketplace that connects solo travelers with verified group trips across India. Just open the app, pick a vibe that matches your style — adventure, chill, party, or culture — and book a trip with like-minded strangers who become friends."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is it safe to travel with strangers on group trips?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. Every travel agency on SoleGoes goes through a verification process before listing trips. Payments are secured through the platform (no random UPI transfers), and you can chat with your group before the trip starts so you already know who you're traveling with."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is SoleGoes and how does it work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "SoleGoes is a social travel platform built for solo travelers in India. Browse verified group trips, book in a few taps, and instantly join a group chat with your fellow travelers. It's designed so you're solo but not alone — meet your tribe on the way."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much do group trips cost in India?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Group trips on SoleGoes range from budget weekend getaways under 5,000 rupees to premium experiences. Every trip shows transparent pricing upfront — no hidden charges. You can also split costs with friends directly through the app."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I book a trip for me and my friends together?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! SoleGoes lets you book for yourself and add friends to the same trip. You can split payments instantly through the app — no awkward money talks or WhatsApp chaos. Just pick a trip, add your crew, and go."
+                }
+            }
+        ]
+    }
+    </script>
+
     <!-- Full-screen Flash Overlay -->
     <div id="screen-flash" class="fixed inset-0 bg-white opacity-0 pointer-events-none z-[100]"></div>
 
@@ -157,8 +208,9 @@
             </a>
             <div class="flex items-center gap-1 md:gap-2 text-xs md:text-sm font-medium text-gray-300">
                 <a href="#features" class="bg-white/10 text-white px-2 md:px-4 py-1.5 md:py-2 rounded-full transition-colors">Features</a>
+                <a href="#blog" class="px-2 md:px-4 py-1.5 md:py-2 hover:bg-white/5 rounded-full transition-colors">Blog</a>
                 <a href="partner.html" class="px-2 md:px-4 py-1.5 md:py-2 hover:bg-white/5 rounded-full transition-colors whitespace-nowrap">Agencies</a>
-                <a href="contact.html" class="px-2 md:px-4 py-1.5 md:py-2 hover:bg-white/5 rounded-full transition-colors">Contact</a>
+                <a href="contact.html" class="px-2 md:px-4 py-1.5 md:py-2 hover:bg-white/5 rounded-full transition-colors hidden md:block">Contact</a>
             </div>
             <button onclick="openWaitlistModal()" class="bg-white text-black px-3 md:px-4 py-1.5 rounded-full text-xs md:text-sm font-bold hover:bg-gray-200 transition-colors whitespace-nowrap">Join</button>
         </div>
@@ -181,19 +233,15 @@
                 <span class="text-primary">NOT ALONE.</span>
             </h1>
             <p class="text-xl md:text-2xl text-textSecondary max-w-2xl mx-auto mb-10 font-medium">
-                The first social marketplace for verified group trips.<br>
-                <span class="text-gray-400">Connect, chat, and travel with your tribe.</span>
+                Friends not free? Go anyway. Meet your tribe on the way.<br>
+                <span class="text-gray-400">Get out of your room. Live life with fellow mates.</span>
             </p>
 
             
             <div class="flex items-center justify-center gap-4 mb-20">
-                 <div class="flex -space-x-3">
-                    <div class="w-10 h-10 rounded-full border-2 border-black bg-gray-700 overflow-hidden"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" class="w-full h-full object-cover"></div>
-                    <div class="w-10 h-10 rounded-full border-2 border-black bg-gray-700 overflow-hidden"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" class="w-full h-full object-cover"></div>
-                    <div class="w-10 h-10 rounded-full border-2 border-black bg-gray-700 overflow-hidden"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=64&h=64" class="w-full h-full object-cover"></div>
-                    <div class="w-10 h-10 rounded-full border-2 border-black bg-white/10 flex items-center justify-center text-xs font-bold backdrop-blur-sm">+2k</div>
-                 </div>
-                 <span class="text-sm text-textSecondary font-semibold tracking-wide uppercase">on the waitlist</span>
+                <button onclick="openWaitlistModal()" class="bg-primary px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-neon">
+                    Join the Waitlist
+                </button>
             </div>
             
             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-textSecondary opacity-50">
@@ -270,7 +318,7 @@
                         </div>
                         <h2 class="text-4xl md:text-7xl font-bold mb-6">Find Your Vibe</h2>
                         <p class="text-lg md:text-xl text-textSecondary leading-relaxed max-w-md">
-                            Doom scrolling is over. Filter verified trips by vibe: <span class="text-white">Partying in Goa</span>, <span class="text-white">Backpacking Manali</span>, or <span class="text-white">Chilling in Kerala</span>.
+                            It's Friday evening. None of your friends are free. Open SoleGoes, pick a vibe — <span class="text-white">Partying in Goa</span>, <span class="text-white">Backpacking Manali</span>, or <span class="text-white">Chilling in Kerala</span> — and by tomorrow, you're there.
                         </p>
                     </div>
 
@@ -279,9 +327,9 @@
                         <div class="w-12 h-12 rounded-2xl bg-violet/20 flex items-center justify-center mb-6 border border-violet/30 text-violet">
                             <i data-lucide="file-check" class="w-6 h-6"></i>
                         </div>
-                        <h2 class="text-4xl md:text-7xl font-bold mb-6">Know Before You Go</h2>
+                        <h2 class="text-4xl md:text-7xl font-bold mb-6">Trust, Not Guesswork</h2>
                         <p class="text-lg md:text-xl text-textSecondary leading-relaxed max-w-md">
-                            Detailed itineraries, transparent pricing, and verified agency profiles. No hidden costs, no nasty surprises.
+                            No more sending ₹18K to a random UPI QR and hoping for the best. Every agency is verified. Every trip is transparent. Your money is safe before you even pack.
                         </p>
                     </div>
 
@@ -290,9 +338,9 @@
                         <div class="w-12 h-12 rounded-2xl bg-pink-500/20 flex items-center justify-center mb-6 border border-pink-500/30 text-pink-500">
                             <i data-lucide="users" class="w-6 h-6"></i>
                         </div>
-                        <h2 class="text-4xl md:text-7xl font-bold mb-6">Solo, Not Alone</h2>
+                        <h2 class="text-4xl md:text-7xl font-bold mb-6">Strangers to Tribe</h2>
                         <p class="text-lg md:text-xl text-textSecondary leading-relaxed max-w-md">
-                            Join the trip group chat instantly. Break the ice, plan logistics, and see who's bringing the guitar 🎸 before you leave home.
+                            The moment you book, you're in the group chat. Share playlists, break the ice, see who's bringing the guitar 🎸. By the time you meet — you already know each other.
                         </p>
                     </div>
 
@@ -301,9 +349,9 @@
                         <div class="w-12 h-12 rounded-2xl bg-green-500/20 flex items-center justify-center mb-6 border border-green-500/30 text-green-500">
                             <i data-lucide="credit-card" class="w-6 h-6"></i>
                         </div>
-                        <h2 class="text-4xl md:text-7xl font-bold mb-6">Split & Secure</h2>
+                        <h2 class="text-4xl md:text-7xl font-bold mb-6">Book in 3 Taps</h2>
                         <p class="text-lg md:text-xl text-textSecondary leading-relaxed max-w-md">
-                            Pay via UPI or Card securely on the app. Split costs with friends easily. Your money is safe with us.
+                            Pick a trip, add your friends, pay via UPI or card. Split costs instantly. No WhatsApp chaos, no awkward money talks — just book and go.
                         </p>
                         <div class="mt-8">
                             <button onclick="openWaitlistModal()" class="bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform">Join the Club</button>
@@ -332,6 +380,69 @@
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     </style>
 
+    <!-- Blog Section -->
+    <section class="py-20 md:py-32 px-6 relative z-30 bg-deep" id="blog">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <div class="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary font-bold uppercase text-xs tracking-widest mb-6">From the Blog</div>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Stories, Tips & Vibes</h2>
+                <p class="text-base md:text-lg text-textSecondary max-w-xl mx-auto">Real talk about solo travel, making friends on the road, and getting out of your comfort zone.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Blog Card 1 -->
+                <a href="blog/how-to-make-friends-while-traveling-solo.html" class="group glass rounded-2xl p-6 border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1">
+                    <div class="text-xs font-bold text-primary uppercase tracking-wider mb-3">Connection</div>
+                    <h3 class="text-lg font-bold mb-3 group-hover:text-primary transition-colors">How to Make Friends While Traveling Solo in India</h3>
+                    <p class="text-sm text-textSecondary line-clamp-2">Friends not free? Here's how solo travelers are meeting their tribe on the road — and why strangers make the best travel buddies.</p>
+                </a>
+
+                <!-- Blog Card 2 -->
+                <a href="blog/travel-saved-me-from-loneliness.html" class="group glass rounded-2xl p-6 border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1">
+                    <div class="text-xs font-bold text-pink-500 uppercase tracking-wider mb-3">Mental Health</div>
+                    <h3 class="text-lg font-bold mb-3 group-hover:text-primary transition-colors">Travel Saved Me From Loneliness — Here's How</h3>
+                    <p class="text-sm text-textSecondary line-clamp-2">A real story about feeling stuck, booking a solo trek, and finding a tribe that changed everything.</p>
+                </a>
+
+                <!-- Blog Card 3 -->
+                <a href="blog/weekend-trips-from-bangalore.html" class="group glass rounded-2xl p-6 border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1">
+                    <div class="text-xs font-bold text-green-500 uppercase tracking-wider mb-3">Bangalore</div>
+                    <h3 class="text-lg font-bold mb-3 group-hover:text-primary transition-colors">10 Weekend Trips from Bangalore Under ₹5K</h3>
+                    <p class="text-sm text-textSecondary line-clamp-2">Bored this weekend? These getaways are cheap, close, and perfect for a spontaneous escape with your crew.</p>
+                </a>
+
+                <!-- Blog Card 4 -->
+                <a href="blog/icebreakers-for-group-trips.html" class="group glass rounded-2xl p-6 border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1">
+                    <div class="text-xs font-bold text-yellow-500 uppercase tracking-wider mb-3">Group Vibes</div>
+                    <h3 class="text-lg font-bold mb-3 group-hover:text-primary transition-colors">7 Icebreakers That Actually Work on Group Trips</h3>
+                    <p class="text-sm text-textSecondary line-clamp-2">Not cringe, we promise. These conversation starters turn awkward silences into lifelong friendships.</p>
+                </a>
+
+                <!-- Blog Card 5 -->
+                <a href="blog/sandwich-leave-trips-india.html" class="group glass rounded-2xl p-6 border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1">
+                    <div class="text-xs font-bold text-violet uppercase tracking-wider mb-3">Hack Your Calendar</div>
+                    <h3 class="text-lg font-bold mb-3 group-hover:text-primary transition-colors">The Art of Sandwich Leave Trips</h3>
+                    <p class="text-sm text-textSecondary line-clamp-2">How to travel more without quitting your job. Master the long weekend and never waste a holiday again.</p>
+                </a>
+
+                <!-- Blog Card 6 -->
+                <a href="blog/group-trips-for-solo-travelers-india.html" class="group glass rounded-2xl p-6 border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1">
+                    <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-3">Solo Travel</div>
+                    <h3 class="text-lg font-bold mb-3 group-hover:text-primary transition-colors">Group Trips for Solo Travelers: Why Strangers Make the Best Buddies</h3>
+                    <p class="text-sm text-textSecondary line-clamp-2">Started solo, ended up with a tribe. Why traveling with strangers in India is the move in 2026.</p>
+                </a>
+
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="blog/" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+                    Read all posts <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Agencies -->
     <section class="py-32 px-6 relative z-30 bg-deep" id="agencies">
         <div class="glass max-w-6xl mx-auto rounded-[3rem] p-12 md:p-24 relative overflow-hidden border border-white/10 shadow-2xl">
@@ -340,26 +451,26 @@
             <div class="relative z-10 flex flex-col md:flex-row gap-16 items-center">
                 <div class="flex-1 text-left">
                      <div class="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 text-violet-300 font-bold uppercase text-xs tracking-widest mb-6">For Partners</div>
-                    <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Grow your travel business <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">effortlessly.</span></h2>
-                    <p class="text-xl text-textSecondary mb-10 leading-relaxed">
-                        Agencies on SoleGoes get a dedicated dashboard, automated payments, and direct access to the Gen Z market.
+                    <h2 class="text-3xl md:text-6xl font-bold mb-6 leading-tight">Done with WhatsApp <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">chaos?</span></h2>
+                    <p class="text-base md:text-xl text-textSecondary mb-10 leading-relaxed">
+                        We build the platform around your real problems. Tell us what you need — we'll develop it with you. Secure payments, a dashboard, and Gen Z travelers who trust you.
                     </p>
-                    <a href="partner.html" class="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-200 hover:-translate-y-1 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                    <a href="partner.html" class="inline-flex items-center gap-3 bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-gray-200 hover:-translate-y-1 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] whitespace-nowrap">
                         Become a Partner <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
                 </div>
                 <div class="grid grid-cols-2 gap-4 flex-1 w-full">
                     <div class="bg-black/40 p-6 rounded-3xl border border-white/5 backdrop-blur-sm">
-                        <div class="text-3xl font-bold text-white mb-1">0%</div>
-                        <div class="text-sm text-textSecondary">Commission for<br>Founding Partners</div>
+                        <div class="text-3xl font-bold text-white mb-1">5%</div>
+                        <div class="text-sm text-textSecondary">Commission Only<br>for Founding Partners</div>
                     </div>
                     <div class="bg-black/40 p-6 rounded-3xl border border-white/5 backdrop-blur-sm">
                         <div class="text-3xl font-bold text-white mb-1">24h</div>
                         <div class="text-sm text-textSecondary">Payout<br>Settlement</div>
                     </div>
                      <div class="bg-black/40 p-6 rounded-3xl border border-white/5 backdrop-blur-sm col-span-2">
-                        <div class="text-3xl font-bold text-white mb-1">10k+</div>
-                        <div class="text-sm text-textSecondary">Active Monthly Users Waiting</div>
+                        <div class="text-3xl font-bold text-white mb-1">6-Step</div>
+                        <div class="text-sm text-textSecondary">Instant Trip<br>Publishing Wizard</div>
                     </div>
                 </div>
             </div>
@@ -367,6 +478,79 @@
     </section>
 
 
+
+    <!-- FAQ Section -->
+    <section class="py-20 md:py-32 px-6 relative z-30 bg-deep" id="faq">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <div class="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary font-bold uppercase text-xs tracking-widest mb-6">FAQ</div>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Got Questions?</h2>
+                <p class="text-base md:text-lg text-textSecondary max-w-xl mx-auto">Everything you need to know about solo travel with SoleGoes.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="glass rounded-2xl border border-white/5 overflow-hidden">
+                    <button onclick="this.parentElement.classList.toggle('faq-open')" class="w-full flex items-center justify-between p-6 text-left">
+                        <h3 class="text-lg font-bold pr-4">How do I find group trips for solo travelers in India?</h3>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="text-textSecondary pb-6">SoleGoes is a marketplace that connects solo travelers with verified group trips across India. Just open the app, pick a vibe that matches your style — adventure, chill, party, or culture — and book a trip with like-minded strangers who become friends.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="glass rounded-2xl border border-white/5 overflow-hidden">
+                    <button onclick="this.parentElement.classList.toggle('faq-open')" class="w-full flex items-center justify-between p-6 text-left">
+                        <h3 class="text-lg font-bold pr-4">Is it safe to travel with strangers on group trips?</h3>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="text-textSecondary pb-6">Absolutely. Every travel agency on SoleGoes goes through a verification process before listing trips. Payments are secured through the platform (no random UPI transfers), and you can chat with your group before the trip starts so you already know who you're traveling with.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="glass rounded-2xl border border-white/5 overflow-hidden">
+                    <button onclick="this.parentElement.classList.toggle('faq-open')" class="w-full flex items-center justify-between p-6 text-left">
+                        <h3 class="text-lg font-bold pr-4">What is SoleGoes and how does it work?</h3>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="text-textSecondary pb-6">SoleGoes is a social travel platform built for solo travelers in India. Browse verified group trips, book in a few taps, and instantly join a group chat with your fellow travelers. It's designed so you're solo but not alone — meet your tribe on the way.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="glass rounded-2xl border border-white/5 overflow-hidden">
+                    <button onclick="this.parentElement.classList.toggle('faq-open')" class="w-full flex items-center justify-between p-6 text-left">
+                        <h3 class="text-lg font-bold pr-4">How much do group trips cost in India?</h3>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="text-textSecondary pb-6">Group trips on SoleGoes range from budget weekend getaways under 5,000 rupees to premium experiences. Every trip shows transparent pricing upfront — no hidden charges. You can also split costs with friends directly through the app.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="glass rounded-2xl border border-white/5 overflow-hidden">
+                    <button onclick="this.parentElement.classList.toggle('faq-open')" class="w-full flex items-center justify-between p-6 text-left">
+                        <h3 class="text-lg font-bold pr-4">Can I book a trip for me and my friends together?</h3>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="text-textSecondary pb-6">Yes! SoleGoes lets you book for yourself and add friends to the same trip. You can split payments instantly through the app — no awkward money talks or WhatsApp chaos. Just pick a trip, add your crew, and go.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .faq-open .faq-icon { transform: rotate(45deg); }
+        .faq-open .faq-answer { max-height: 200px; padding-bottom: 0; }
+    </style>
 
     <!-- Waitlist Modal -->
     <div id="waitlist-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[200] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
@@ -457,9 +641,7 @@
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">You're on the list!</h2>
                 <p class="text-textSecondary mb-8">
-                    Thanks for joining! We'll send you an email when we launch. 
-                    <br><br>
-                    <span class="text-white font-semibold">Position: <span id="waitlist-position">#2,347</span></span>
+                    Thanks for joining! We'll send you an email when we launch.
                 </p>
                 <button 
                     onclick="closeWaitlistModal()"
